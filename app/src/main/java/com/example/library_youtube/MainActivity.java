@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView empty = findViewById(R.id.empty);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler);
+        RecyclerView recyclerView = findViewById(R.id.recycler1);
 
         database.getReference().child("notes").addValueEventListener(new ValueEventListener() {
             @Override

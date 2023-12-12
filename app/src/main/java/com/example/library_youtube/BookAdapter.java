@@ -15,7 +15,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     Context context;
     ArrayList<Book> arrayList;
-    BookAdapter.OnItemClickListener onItemClickListener;
+    OnItemClickListener onItemClickListener;
 
     public BookAdapter(Context context, ArrayList<Book> arrayList) {
         this.context = context;
@@ -24,13 +24,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public BookAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.book_list_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(arrayList.get(position).getTitle());
         holder.author.setText(arrayList.get(position).getAuthor());
         holder.copy.setText(arrayList.get(position).getCopy());
@@ -39,7 +39,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return arrayList.size();
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -53,13 +53,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.list_item_title);
-            author = itemView.findViewById(R.id.list_item_subtitle);
+            author = itemView.findViewById(R.id.list_item_author);
             copy = itemView.findViewById(R.id.list_item_copy);
         }
     }
 
     public static class OnItemClickListener {
-        public void onClick(Book book) {
+        void onClick(Book book) {
         }
     }
 }

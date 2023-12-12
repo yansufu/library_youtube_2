@@ -26,7 +26,22 @@
             android:name=".NoteAdapter"
             android:exported="false" />
         <activity
+            android:name=".BookAdapter"
+            android:exported="false" />
+        <activity
             android:name=".Note"
+            android:exported="false" />
+        <activity
+            android:name=".DetailCartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".login"
